@@ -61,7 +61,7 @@ fn pulsar_fn(grid: &mut Grid, x: usize, y: usize) {
     }
 }
 
-fn lwss_fn(grid: &mut Grid, x: usize, y: usize) {
+fn beehive_fn(grid: &mut Grid, x: usize, y: usize) {
     grid[y][x + 1] = true;
     grid[y][x + 4] = true;
     grid[y + 1][x] = true;
@@ -102,15 +102,69 @@ fn loaf_fn(grid: &mut Grid, x: usize, y: usize) {
 //Patron inicial 
 //el &mut permite mutar a una grilla, permite modificaciones, si no se pone no se puede modificar
 fn set_initial_pattern(grid: &mut Grid) {
+    //Primera fila
     glider_fn(grid, 2, 2);
-    blinker_fn(grid, 10, 10);
-    toad_fn(grid, 20, 20);
-    beacon_fn(grid, 30, 30);
+    blinker_fn(grid, 10, 2);
+    toad_fn(grid, 20, 2);
+    beehive_fn(grid, 30, 2);
+    toad_fn(grid, 40, 2);
+    glider_fn(grid, 50, 2);
+    toad_fn(grid, 60, 2);
+    glider_fn(grid, 70, 2);
+    beehive_fn(grid, 80, 2);
+    toad_fn(grid, 90, 2);
+
+    //Segunda fila
+    beacon_fn(grid, 2, 20);
+    boat_fn(grid, 12, 20);
+    beacon_fn(grid, 20, 20);
+    loaf_fn(grid, 30, 20);
+    beacon_fn(grid, 40, 20);
+    boat_fn(grid, 50, 20);
+    beacon_fn(grid, 60, 20);
+    loaf_fn(grid, 70, 20);
+    tub_fn(grid, 80, 20);
+    tub_fn(grid, 90, 20);
+
+
+    //tercera fila
+    pulsar_fn(grid, 2, 40);
+    pulsar_fn(grid, 20, 40);
     pulsar_fn(grid, 40, 40);
-    lwss_fn(grid, 60, 60);
-    boat_fn(grid, 70, 70);
-    tub_fn(grid, 80, 80);
-    loaf_fn(grid, 90, 90);
+    pulsar_fn(grid, 60, 40);
+    pulsar_fn(grid, 80, 40);
+
+    //cuarta fila
+    beacon_fn(grid, 2, 60);
+    boat_fn(grid, 12, 60);
+    beacon_fn(grid, 20, 60);
+    loaf_fn(grid, 30, 60);
+    beacon_fn(grid, 40, 60);
+    boat_fn(grid, 50, 60);
+    beacon_fn(grid, 60, 60);
+    loaf_fn(grid, 70, 60);
+    tub_fn(grid, 80, 60);
+    tub_fn(grid, 90, 60);
+
+    //Quinta fila
+    glider_fn(grid, 2, 70);
+    blinker_fn(grid, 10, 70);
+    toad_fn(grid, 20, 70);
+    beehive_fn(grid, 30, 70);
+    toad_fn(grid, 40, 70);
+    glider_fn(grid, 50, 70);
+    toad_fn(grid, 60, 70);
+    glider_fn(grid, 70, 70);
+    beehive_fn(grid, 80, 70);
+    toad_fn(grid, 90, 70);
+
+    //sexta fila
+    pulsar_fn(grid, 2, 80);
+    pulsar_fn(grid, 20, 80);
+    pulsar_fn(grid, 40, 80);
+    pulsar_fn(grid, 60, 80);
+    pulsar_fn(grid, 80, 80);
+
 }
 
 //Ver cuantos vecinos vivos tiene una "Celula" hay 8 posibles por eso el u8
